@@ -54,7 +54,7 @@ The quickest way to create an **MDLMesh** object is to apply its Parametric Mesh
 
     newBoxWithDimensions:segments:geometryType:inwardNormals:allocator:
 
-Naturally, the allocator will be an instance of **GLKMeshBufferAllocator** since we want to create a **GLKMesh** object using the **MDLMesh** instance created by the above method.
+Naturally, the allocator will be an instance of **GLKMeshBufferAllocator** since we want to create a **GLKMesh** object using the **MDLMesh** instance created by the   method above.
 
 On examining the output of the values assigned to the various properties of **GLKMesh** and its associated classes, we discovered GLKit will create OpenGL vertex buffer objects (VBOs) and Element Buffer Objects (EBOs). VBOs are returned via the chained property
 
@@ -77,7 +77,7 @@ The next step is to dig out enough information to execute the following OpenGL c
 
 ## Further Observations:
 
-(a) It is not possible to create a **GLKMesh** instance from a MDLMesh object if the allocator is not an instance of **GLKMeshBufferAllocator**. When the **GLKMesh** method *initWithMesh:error:* is called, the error message **"Vertex buffer in MDLMesh was not created using a GLKMeshBufferAllocator"** will be returned.
+(a) It is not possible to create a **GLKMesh** instance from a **MDLMesh** object if the allocator is not an instance of **GLKMeshBufferAllocator**. When the **GLKMesh** method *initWithMesh:error:* is called, the error message **"Vertex buffer in MDLMesh was not created using a GLKMeshBufferAllocator"** will be returned.
 
 (b) The number of vertex buffers and the number of submeshes might be more than 1 in an actual **MDLMesh** object. Usually the vertices' position, normal and texture coordinate attributes are interleaved as part of a structure viz.
 
@@ -100,7 +100,7 @@ In conclusion, the class **GLKMesh** is of limited utility since **GLKMesh** obj
 <br />
 <br />
 
-The focus of this demo is on how use GLKMeshes in an OpenGL program running under macOS 10.11 or later.  We won't explain the demo's source code in detail except to mentioned in the passing that demo loads an equirectangular image (resolution 2:1) and projects it onto the inner surface of a sphere.
+The focus of this demo is on how use GLKMeshes in an OpenGL program running under macOS 10.11 or later.  We won't explain the demo's source code in detail except to mention in the passing that demo loads an equirectangular image (resolution 2:1) and projects it onto the inner surface of a sphere.
 
 <br />
 <br />
